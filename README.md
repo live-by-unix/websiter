@@ -2,10 +2,7 @@
 
 **Build without boundaries.**
 <p align="center">
-  <svg width="128" height="128" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-    <rect width="64" height="64" rx="16" fill="#8c7bff"/>
-    <path d="M8 19h9l6 25 8-19h6l8 19 8-25h9L50 49h-9l-7-17-7 17h-9z" fill="white"/>
-  </svg>
+  <img width="128" height="128" alt="Websiter" src="icon.svg">
 </p>
 
 [![CI](https://github.com/live-by-unix/websiter/actions/workflows/ci.yml/badge.svg)](https://github.com/live-by-unix/websiter/actions/workflows/ci.yml)

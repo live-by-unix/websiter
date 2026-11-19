@@ -2,9 +2,13 @@
 
 **Build without boundaries.**
 
+[![CI](https://github.com/live-by-unix/websiter/actions/workflows/ci.yml/badge.svg)](https://github.com/live-by-unix/websiter/actions/workflows/ci.yml)
+[![License: BSD-3-Clause](https://img.shields.io/badge/License-BSD--3--Clause-blue.svg)](LICENSE)
+[![.NET 10](https://img.shields.io/badge/.NET-10-512BD4.svg)](https://dotnet.microsoft.com/)
+
 Websiter is a complete, cross-platform, open-source web application framework for C# and .NET. It gives you a first-class HTTP server, reusable HTML components, a modern frontend pipeline, and — its defining feature — **independent worker processes with built-in inter-process communication**.
 
-Author: [live-by-unix](https://github.com/live-by-unix) · License: [BSD-3-Clause](LICENSE)
+**Repository:** [github.com/live-by-unix/websiter](https://github.com/live-by-unix/websiter) · Author: [live-by-unix](https://github.com/live-by-unix) · License: [BSD-3-Clause](LICENSE)
 
 ---
 
@@ -42,7 +46,10 @@ Worker processes never share memory with the host or each other. All coordinatio
 Requires the [.NET 10 SDK](https://dotnet.microsoft.com/download).
 
 ```bash
-# From a clone of this repository:
+git clone https://github.com/live-by-unix/websiter.git
+cd websiter
+
+# Install the CLI globally:
 ./scripts/install-cli.sh       # macOS/Linux — builds and installs the CLI globally
 .\scripts\install-cli.ps1      # Windows
 ```
@@ -192,7 +199,7 @@ See [`docs/`](docs/) — installation, quickstart, architecture, CLI, configurat
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md). Security issues: see [SECURITY.md](SECURITY.md).
+See [CONTRIBUTING.md](CONTRIBUTING.md). Found a bug or have an idea? [Open an issue](https://github.com/live-by-unix/websiter/issues). Security issues: see [SECURITY.md](SECURITY.md).
 
 ## License
 

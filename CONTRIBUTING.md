@@ -4,7 +4,8 @@ Thanks for your interest in contributing. Websiter is BSD-3-Clause licensed and 
 
 ## Getting started
 
-1. Fork the repository and clone your fork.
+1. Fork [github.com/live-by-unix/websiter](https://github.com/live-by-unix/websiter) and clone your fork:
+   `git clone https://github.com/<you>/websiter.git`
 2. Install the [.NET 10 SDK](https://dotnet.microsoft.com/download).
 3. Build: `dotnet build Websiter.slnx`
 4. Test: `dotnet test Websiter.slnx`

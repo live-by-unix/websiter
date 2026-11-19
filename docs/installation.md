@@ -8,11 +8,14 @@
 
 ## Install the CLI
 
-From a clone of the repository:
+Clone the repository, then:
 
 ```bash
+git clone https://github.com/live-by-unix/websiter.git
+cd websiter
+
 ./scripts/setup.sh        # restores and builds the solution
-./scripts/install-cli.sh  # packs and installs the `websiter` tool globally
+./scripts/install-cli.sh  # installs the `websiter` tool globally
 ```
 
 Windows (PowerShell):

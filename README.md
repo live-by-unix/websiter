@@ -5,7 +5,6 @@
   <img width="128" height="128" alt="Websiter" src="icon-for-websiter.svg">
 </p>
 
-[![CI](https://github.com/live-by-unix/websiter/actions/workflows/ci.yml/badge.svg)](https://github.com/live-by-unix/websiter/actions/workflows/ci.yml)
 [![License: BSD-3-Clause](https://img.shields.io/badge/License-BSD--3--Clause-blue.svg)](LICENSE)
 [![.NET 10](https://img.shields.io/badge/.NET-10-512BD4.svg)](https://dotnet.microsoft.com/)
 

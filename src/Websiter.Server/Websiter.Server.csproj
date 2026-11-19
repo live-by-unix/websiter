@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Kestrel-based HTTP server, routing and middleware for Websiter applications.</Description>
+    <PackageId>Websiter.Server</PackageId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <ProjectReference Include="..\Websiter.Core\Websiter.Core.csproj" />
+    <ProjectReference Include="..\Websiter.Routing\Websiter.Routing.csproj" />
+    <ProjectReference Include="..\Websiter.Security\Websiter.Security.csproj" />
+    <ProjectReference Include="..\Websiter.Diagnostics\Websiter.Diagnostics.csproj" />
+    <ProjectReference Include="..\Websiter.Components\Websiter.Components.csproj" />
+    <ProjectReference Include="..\Websiter.Frontend\Websiter.Frontend.csproj" />
+    <ProjectReference Include="..\Websiter.Native\Websiter.Native.csproj" />
+  </ItemGroup>
+
+</Project>

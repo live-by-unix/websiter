@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>websiter</AssemblyName>
+    <RootNamespace>Websiter.CLI</RootNamespace>
+    <Description>The Websiter command-line interface.</Description>
+    <PackageId>Websiter.CLI</PackageId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <ProjectReference Include="..\Websiter.Core\Websiter.Core.csproj" />
+    <ProjectReference Include="..\Websiter.Workers\Websiter.Workers.csproj" />
+    <ProjectReference Include="..\Websiter.Deployment\Websiter.Deployment.csproj" />
+    <ProjectReference Include="..\Websiter.Diagnostics\Websiter.Diagnostics.csproj" />
+  </ItemGroup>
+
+</Project>

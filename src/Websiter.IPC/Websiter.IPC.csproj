@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Websiter's native inter-process communication framework: message envelopes, transports and request/response messaging.</Description>
+    <PackageId>Websiter.IPC</PackageId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Websiter.Core\Websiter.Core.csproj" />
+  </ItemGroup>
+
+</Project>

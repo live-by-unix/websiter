@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>Websiter.WorkerHost</AssemblyName>
+    <RootNamespace>Websiter.WorkerHost</RootNamespace>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <ProjectReference Include="../../src/Websiter.Runtime/Websiter.Runtime.csproj" />
+    <ProjectReference Include="../../src/Websiter.Workers/Websiter.Workers.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,28 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Websiter.CLI/Websiter.CLI.csproj" />
+    <Project Path="src/Websiter.Components/Websiter.Components.csproj" />
+    <Project Path="src/Websiter.Core/Websiter.Core.csproj" />
+    <Project Path="src/Websiter.Deployment/Websiter.Deployment.csproj" />
+    <Project Path="src/Websiter.Diagnostics/Websiter.Diagnostics.csproj" />
+    <Project Path="src/Websiter.Frontend/Websiter.Frontend.csproj" />
+    <Project Path="src/Websiter.IPC/Websiter.IPC.csproj" />
+    <Project Path="src/Websiter.Native/Websiter.Native.csproj" />
+    <Project Path="src/Websiter.Routing/Websiter.Routing.csproj" />
+    <Project Path="src/Websiter.Runtime/Websiter.Runtime.csproj" />
+    <Project Path="src/Websiter.Security/Websiter.Security.csproj" />
+    <Project Path="src/Websiter.Server/Websiter.Server.csproj" />
+    <Project Path="src/Websiter.Workers/Websiter.Workers.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Websiter.CLI.Tests/Websiter.CLI.Tests.csproj" />
+    <Project Path="tests/Websiter.Core.Tests/Websiter.Core.Tests.csproj" />
+    <Project Path="tests/Websiter.Integration.Tests/Websiter.Integration.Tests.csproj" />
+    <Project Path="tests/Websiter.IPC.Tests/Websiter.IPC.Tests.csproj" />
+    <Project Path="tests/Websiter.Runtime.Tests/Websiter.Runtime.Tests.csproj" />
+    <Project Path="tests/Websiter.Security.Tests/Websiter.Security.Tests.csproj" />
+    <Project Path="tests/Websiter.Server.Tests/Websiter.Server.Tests.csproj" />
+    <Project Path="tests/Websiter.WorkerHost/Websiter.WorkerHost.csproj" />
+    <Project Path="tests/Websiter.Workers.Tests/Websiter.Workers.Tests.csproj" />
+  </Folder>
+</Solution>

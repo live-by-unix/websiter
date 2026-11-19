@@ -1,0 +1,15 @@
+{
+  "application": {
+    "name": "Authentication",
+    "environment": "Development"
+  },
+  "server": {
+    "host": "0.0.0.0",
+    "port": 8080
+  },
+  "workers": {
+    "autoRestart": true,
+    "restartLimit": 5,
+    "restartDelayMs": 500
+  }
+}

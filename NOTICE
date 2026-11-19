@@ -1,0 +1,12 @@
+Websiter
+Copyright (c) 2025 live-by-unix
+
+Websiter is licensed under the BSD 3-Clause License; see the LICENSE file.
+
+Third-party notices:
+
+- This project targets .NET 10 and uses ASP.NET Core, xUnit, and other
+  components of the .NET platform, which are licensed under the MIT License
+  (https://github.com/dotnet/core/blob/main/LICENSE.TXT) and other licenses
+  as applicable.
+- No third-party source code is vendored in this repository.

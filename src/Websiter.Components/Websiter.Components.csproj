@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Reusable HTML component engine for Websiter applications.</Description>
+    <PackageId>Websiter.Components</PackageId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Websiter.Core\Websiter.Core.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Websiter application runtime: composition root that wires the HTTP server, workers and IPC together.</Description>
+    <PackageId>Websiter.Runtime</PackageId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <ProjectReference Include="..\Websiter.Core\Websiter.Core.csproj" />
+    <ProjectReference Include="..\Websiter.Server\Websiter.Server.csproj" />
+    <ProjectReference Include="..\Websiter.Workers\Websiter.Workers.csproj" />
+    <ProjectReference Include="..\Websiter.IPC\Websiter.IPC.csproj" />
+    <ProjectReference Include="..\Websiter.Components\Websiter.Components.csproj" />
+    <ProjectReference Include="..\Websiter.Frontend\Websiter.Frontend.csproj" />
+    <ProjectReference Include="..\Websiter.Diagnostics\Websiter.Diagnostics.csproj" />
+    <ProjectReference Include="..\Websiter.Security\Websiter.Security.csproj" />
+    <ProjectReference Include="..\Websiter.Native\Websiter.Native.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Operating-system primitives for Websiter: paths, process inspection, file watching.</Description>
+    <PackageId>Websiter.Native</PackageId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Websiter.Core\Websiter.Core.csproj" />
+  </ItemGroup>
+
+</Project>

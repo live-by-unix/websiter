@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Diagnostics, health checks and metrics for Websiter applications.</Description>
+    <PackageId>Websiter.Diagnostics</PackageId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Websiter.Core\Websiter.Core.csproj" />
+  </ItemGroup>
+
+</Project>

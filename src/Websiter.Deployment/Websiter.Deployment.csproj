@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Build, packaging and deployment helpers for Websiter applications.</Description>
+    <PackageId>Websiter.Deployment</PackageId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Websiter.Core\Websiter.Core.csproj" />
+    <ProjectReference Include="..\Websiter.Native\Websiter.Native.csproj" />
+  </ItemGroup>
+
+</Project>

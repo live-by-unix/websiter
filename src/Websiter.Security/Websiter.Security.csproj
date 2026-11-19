@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Security primitives for Websiter: headers, secrets, rate limiting and validation helpers.</Description>
+    <PackageId>Websiter.Security</PackageId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Websiter.Core\Websiter.Core.csproj" />
+  </ItemGroup>
+
+</Project>

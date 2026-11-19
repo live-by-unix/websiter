@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Independent worker process runtime for Websiter applications.</Description>
+    <PackageId>Websiter.Workers</PackageId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Websiter.Core\Websiter.Core.csproj" />
+    <ProjectReference Include="..\Websiter.IPC\Websiter.IPC.csproj" />
+    <ProjectReference Include="..\Websiter.Native\Websiter.Native.csproj" />
+  </ItemGroup>
+
+</Project>

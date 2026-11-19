@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>__PROJECT__ — Distributed</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 44rem; margin: 3rem auto; padding: 0 1rem; }
+    code, pre { background: #f1f5f9; padding: 0.2rem 0.4rem; border-radius: 4px; }
+    pre { padding: 1rem; overflow-x: auto; }
+  </style>
+</head>
+<body>
+  <h1>__PROJECT__ — distributed workers</h1>
+  <p>This app runs multiple independent worker processes:</p>
+  <ul>
+    <li><code>DatabaseWorker</code> — data access over IPC</li>
+    <li><code>AuthWorker</code> — authentication (calls DatabaseWorker via IPC)</li>
+    <li><code>EmailWorker</code> — event subscriber</li>
+  </ul>
+  <h2>Try it</h2>
+  <pre>curl localhost:8080/api/users
+curl -X POST localhost:8080/api/auth/login \
+  -H 'Content-Type: application/json' \
+  -d '{"username":"alice","password":"demo"}'
+curl localhost:8080/api/workers</pre>
+  <p>Inspect processes: <code>websiter workers list</code></p>
+</body>
+</html>

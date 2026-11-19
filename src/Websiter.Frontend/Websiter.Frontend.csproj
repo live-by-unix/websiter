@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Frontend asset pipeline for Websiter applications.</Description>
+    <PackageId>Websiter.Frontend</PackageId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Websiter.Core\Websiter.Core.csproj" />
+    <ProjectReference Include="..\Websiter.Components\Websiter.Components.csproj" />
+  </ItemGroup>
+
+</Project>

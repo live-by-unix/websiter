@@ -1,9 +1,6 @@
 # Websiter
 
 **Build without boundaries.**
-<p align="center">
-  <img width="128" height="128" alt="Websiter" src="https://w3.org/2000/svg">
-</p>
 
 [![CI](https://github.com/live-by-unix/websiter/actions/workflows/ci.yml/badge.svg)](https://github.com/live-by-unix/websiter/actions/workflows/ci.yml)
 [![License: BSD-3-Clause](https://img.shields.io/badge/License-BSD--3--Clause-blue.svg)](LICENSE)

@@ -15,7 +15,11 @@ app.MapGet("/api/users", async ctx =>
 app.MapPost("/api/auth/login", async ctx =>
 {
     var body = await ctx.ReadJsonAsync<LoginRequest>(ctx.RequestAborted);
-    if (body is null) return await ctx.WriteJsonAsync(new { error = "invalid body" }, 400, ctx.RequestAborted);
+    if (body is null)
+    {
+        await ctx.WriteJsonAsync(new { error = "invalid body" }, 400, ctx.RequestAborted);
+        return;
+    }
 
     var session = await IPC.RequestAsync<object>("AuthWorker", "Authenticate", new
     {

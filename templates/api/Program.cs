@@ -23,8 +23,11 @@ app.MapPost("/api/items", async ctx =>
 {
     var body = await ctx.ReadJsonAsync<ItemCreate>(ctx.RequestAborted);
     if (body is null || string.IsNullOrWhiteSpace(body.Name))
-        return await ctx.WriteJsonAsync(new { error = "name is required" }, 422, ctx.RequestAborted);
-    return await ctx.WriteJsonAsync(new { id = 3, name = body.Name }, 201, ctx.RequestAborted);
+    {
+        await ctx.WriteJsonAsync(new { error = "name is required" }, 422, ctx.RequestAborted);
+        return;
+    }
+    await ctx.WriteJsonAsync(new { id = 3, name = body.Name }, 201, ctx.RequestAborted);
 });
 
 app.MapDelete("/api/items/{id}", ctx =>

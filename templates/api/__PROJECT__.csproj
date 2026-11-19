@@ -6,9 +6,17 @@
     <Nullable>enable</Nullable>
     <AssemblyName>__PROJECT__</AssemblyName>
     <RootNamespace>__PROJECT__</RootNamespace>
+    <!-- Filled by `websiter new`: path to framework src/ for repo checkouts,
+         empty for NuGet/dotnet-tool installs (uses PackageReference then). -->
+    <WebsiterSrc>__WEBSITER_SRC__</WebsiterSrc>
   </PropertyGroup>
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
-    <ProjectReference Include="__WEBSITER_SRC__/Websiter.Runtime/Websiter.Runtime.csproj" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(WebsiterSrc)' != ''">
+    <ProjectReference Include="$(WebsiterSrc)/Websiter.Runtime/Websiter.Runtime.csproj" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(WebsiterSrc)' == ''">
+    <PackageReference Include="Websiter.Runtime" Version="__WEBSITER_VERSION__" />
   </ItemGroup>
 </Project>

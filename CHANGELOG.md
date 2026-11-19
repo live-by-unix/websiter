@@ -6,6 +6,8 @@ adheres to [Semantic Versioning](https://semver.org/) once 1.0 is reached.
 
 ## [Unreleased]
 
+## [0.1.0] - 2026-11-19
+
 ### Added
 
 - Complete framework: Core, Runtime, Server, Workers, IPC, Routing,

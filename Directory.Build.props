@@ -12,7 +12,10 @@
     <Product>Websiter</Product>
     <Copyright>Copyright (c) live-by-unix. BSD-3-Clause.</Copyright>
     <RepositoryUrl>https://github.com/live-by-unix/websiter</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageProjectUrl>https://github.com/live-by-unix/websiter</PackageProjectUrl>
     <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
+    <PackageTags>websiter;web-framework;aspnetcore;kestrel;workers;ipc</PackageTags>
     <Version>0.1.0</Version>
     <AssemblyVersion>0.1.0.0</AssemblyVersion>
     <FileVersion>0.1.0.0</FileVersion>

@@ -38,5 +38,5 @@ dotnet run --project src/Websiter.CLI -- --help
 ## Uninstall
 
 ```bash
-./scripts/uninstall-cli.sh    # or: dotnet tool uninstall --global websiter
+./scripts/uninstall-cli.sh
 ```

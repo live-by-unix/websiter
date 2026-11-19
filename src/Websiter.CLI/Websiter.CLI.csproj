@@ -4,12 +4,7 @@
     <OutputType>Exe</OutputType>
     <AssemblyName>websiter</AssemblyName>
     <RootNamespace>Websiter.CLI</RootNamespace>
-    <Description>The Websiter command-line interface: scaffolding, dev/build/run, worker management, diagnostics and deployment.</Description>
-    <PackageId>Websiter.CLI</PackageId>
-    <PackAsTool>true</PackAsTool>
-    <ToolCommandName>websiter</ToolCommandName>
-    <Authors>live-by-unix</Authors>
-    <PackageTags>websiter;cli;dotnet-tool</PackageTags>
+    <Description>The Websiter command-line interface.</Description>
   </PropertyGroup>
 
   <ItemGroup>
@@ -18,12 +13,6 @@
     <ProjectReference Include="..\Websiter.Workers\Websiter.Workers.csproj" />
     <ProjectReference Include="..\Websiter.Deployment\Websiter.Deployment.csproj" />
     <ProjectReference Include="..\Websiter.Diagnostics\Websiter.Diagnostics.csproj" />
-  </ItemGroup>
-
-  <!-- Project templates are embedded so `websiter new` works from dotnet tool installs. -->
-  <ItemGroup>
-    <EmbeddedResource Include="..\..\templates\**\*"
-                      LogicalName="Websiter.Templates.%(RecursiveDir)%(Filename)%(Extension)" />
   </ItemGroup>
 
 </Project>

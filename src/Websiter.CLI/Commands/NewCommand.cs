@@ -39,7 +39,7 @@ public static class NewCommand
         if (Directory.Exists(target) && Directory.EnumerateFileSystemEntries(target).Any())
             throw new Program.CliUsageException($"Directory '{target}' already exists and is not empty.");
 
-        var templatesRoot = FindTemplatesRoot() ?? ExtractEmbeddedTemplates()
+        var templatesRoot = FindTemplatesRoot()
             ?? throw new InvalidOperationException(
                 "Websiter templates not found. Set WEBSITER_TEMPLATES to the templates directory.");
 
@@ -65,19 +65,11 @@ public static class NewCommand
         }
 
         // Apply placeholders to the contents of all text files.
-        // frameworkSrc is empty for NuGet/dotnet-tool installs — generated
-        // projects then reference the Websiter.Runtime package instead.
-        var frameworkSrc = string.Empty;
-        var srcCandidate = Path.GetFullPath(Path.Combine(templatesRoot, "..", "src"));
-        var srcDir = new DirectoryInfo(srcCandidate);
-        if (srcDir.Exists)
-        {
-            // Resolve symlinks so generated projects reference the real framework path.
-            if (srcDir.ResolveLinkTarget(returnFinalTarget: true) is { } resolved)
-                srcCandidate = resolved.FullName;
-            frameworkSrc = srcCandidate;
-        }
-        var cliVersion = CliVersion();
+        var frameworkSrc = Path.GetFullPath(Path.Combine(templatesRoot, "..", "src"));
+        // Resolve symlinks so generated projects reference the real framework path.
+        var srcDir = new DirectoryInfo(frameworkSrc);
+        if (srcDir.Exists && srcDir.ResolveLinkTarget(returnFinalTarget: true) is { } resolved)
+            frameworkSrc = resolved.FullName;
         var textExtensions = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
         { ".cs", ".csproj", ".json", ".html", ".htm", ".css", ".js", ".md", ".txt", ".xml", ".yml", ".yaml", ".config" };
         foreach (var file in Directory.EnumerateFiles(target, "*", SearchOption.AllDirectories))
@@ -87,8 +79,7 @@ public static class NewCommand
             if (!text.Contains("__")) continue;
             text = text.Replace("__PROJECT__", name)
                        .Replace("__PROJECTLOWER__", name.ToLowerInvariant())
-                       .Replace("__WEBSITER_SRC__", frameworkSrc)
-                       .Replace("__WEBSITER_VERSION__", cliVersion);
+                       .Replace("__WEBSITER_SRC__", frameworkSrc);
             await File.WriteAllTextAsync(file, text).ConfigureAwait(false);
         }
 
@@ -142,60 +133,6 @@ public static class NewCommand
 
         return candidates.FirstOrDefault(c =>
             Directory.Exists(c) && File.Exists(Path.Combine(c, "basic", "websiter.json")));
-    }
-
-    private const string TemplateResourcePrefix = "Websiter.Templates.";
-
-    /// <summary>
-    /// Fallback for packaged installs: extracts templates embedded in the CLI
-    /// assembly into a per-version temp directory and returns its path.
-    /// </summary>
-    private static string? ExtractEmbeddedTemplates()
-    {
-        var asm = typeof(NewCommand).Assembly;
-        string[] names;
-        try { names = asm.GetManifestResourceNames(); }
-        catch { return null; }
-
-        var resources = names
-            .Where(n => n.StartsWith(TemplateResourcePrefix, StringComparison.Ordinal))
-            .ToList();
-        if (resources.Count == 0) return null;
-
-        var root = Path.Combine(Path.GetTempPath(), $"websiter-templates-{CliVersion()}");
-        if (File.Exists(Path.Combine(root, ".extracted"))) return root;
-
-        var tmp = $"{root}.tmp-{Guid.NewGuid():N}";
-        try
-        {
-            Directory.CreateDirectory(tmp);
-            foreach (var res in resources)
-            {
-                var relative = res[TemplateResourcePrefix.Length..].Replace('\\', '/');
-                var dest = tmp;
-                foreach (var seg in relative.Split('/', StringSplitOptions.RemoveEmptyEntries))
-                    dest = Path.Combine(dest, seg);
-                Directory.CreateDirectory(Path.GetDirectoryName(dest)!);
-                using var stream = asm.GetManifestResourceStream(res)!;
-                using var fs = File.Create(dest);
-                stream.CopyTo(fs);
-            }
-            File.WriteAllText(Path.Combine(tmp, ".extracted"), DateTimeOffset.UtcNow.ToString("O"));
-            if (Directory.Exists(root)) Directory.Delete(root, recursive: true);
-            Directory.Move(tmp, root);
-        }
-        catch
-        {
-            try { Directory.Delete(tmp, recursive: true); } catch { }
-            throw;
-        }
-        return root;
-    }
-
-    private static string CliVersion()
-    {
-        var v = typeof(NewCommand).Assembly.GetName().Version;
-        return v is null ? "0.0.0" : $"{v.Major}.{v.Minor}.{v.Build}";
     }
 
     private static void PrintHelp()

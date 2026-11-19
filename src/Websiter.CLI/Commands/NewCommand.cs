@@ -66,6 +66,10 @@ public static class NewCommand
 
         // Apply placeholders to the contents of all text files.
         var frameworkSrc = Path.GetFullPath(Path.Combine(templatesRoot, "..", "src"));
+        // Resolve symlinks so generated projects reference the real framework path.
+        var srcDir = new DirectoryInfo(frameworkSrc);
+        if (srcDir.Exists && srcDir.ResolveLinkTarget(returnFinalTarget: true) is { } resolved)
+            frameworkSrc = resolved.FullName;
         var textExtensions = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
         { ".cs", ".csproj", ".json", ".html", ".htm", ".css", ".js", ".md", ".txt", ".xml", ".yml", ".yaml", ".config" };
         foreach (var file in Directory.EnumerateFiles(target, "*", SearchOption.AllDirectories))

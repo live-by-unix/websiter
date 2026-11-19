@@ -171,6 +171,9 @@ public sealed class WebsiterApplication : IAsyncDisposable
     /// <summary>Adds custom middleware.</summary>
     public WebsiterApplication Use(Func<HttpContext, Func<Task>, Task> middleware)
     { Server.Use(middleware); return this; }
+    /// <summary>Adds middleware that runs outermost, before all defaults.</summary>
+    public WebsiterApplication UseFirst(Func<HttpContext, Func<Task>, Task> middleware)
+    { Server.UseFirst(middleware); return this; }
     /// <summary>Adds security headers.</summary>
     public WebsiterApplication UseSecurityHeaders() { Server.UseSecurityHeaders(); return this; }
     /// <summary>Adds rate limiting.</summary>

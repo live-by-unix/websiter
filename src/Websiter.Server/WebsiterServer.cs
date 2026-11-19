@@ -173,6 +173,17 @@ public sealed class WebsiterServer : IAsyncDisposable
         return this;
     }
 
+    /// <summary>
+    /// Prepends middleware so it runs outermost — before defaults such as
+    /// exception handling and static-file serving. Useful for cross-cutting
+    /// concerns (analytics, request logging) that must observe every response.
+    /// </summary>
+    public WebsiterServer UseFirst(Func<HttpContext, Func<Task>, Task> middleware)
+    {
+        _middlewares.Insert(0, middleware);
+        return this;
+    }
+
     private bool _securityHeadersAdded;
     /// <summary>Adds security headers to all responses.</summary>
     public WebsiterServer UseSecurityHeaders()

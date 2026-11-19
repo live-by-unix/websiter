@@ -43,15 +43,15 @@ Requires the [.NET 10 SDK](https://dotnet.microsoft.com/download).
 
 ```bash
 # From a clone of this repository:
-dotnet build src/Websiter.CLI -c Release
-# The CLI is published as a tool; install globally with:
-dotnet tool install --global websiter --add-source ./artifacts  # after `scripts/publish-nuget.sh`
+./scripts/install-cli.sh       # macOS/Linux — builds and installs the CLI globally
+.\scripts\install-cli.ps1      # Windows
 ```
 
-Or use the bundled script:
+Or run it straight from the build output:
 
 ```bash
-./scripts/install-cli.sh
+dotnet build src/Websiter.CLI -c Release
+dotnet src/Websiter.CLI/bin/Release/net10.0/websiter.dll --help
 ```
 
 Verify:

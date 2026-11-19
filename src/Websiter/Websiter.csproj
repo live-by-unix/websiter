@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Description>Websiter — build without boundaries. Meta-package that brings in the full Websiter framework.</Description>
+    <PackageId>Websiter</PackageId>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <IncludeSymbols>false</IncludeSymbols>
+    <SuppressDependenciesWhenPacking>false</SuppressDependenciesWhenPacking>
+    <PackageTags>websiter;web-framework;aspnetcore;kestrel;workers;ipc</PackageTags>
+  </PropertyGroup>
+
+  <!-- Metapackage: dependencies only, no assembly of its own. -->
+  <ItemGroup>
+    <ProjectReference Include="..\Websiter.Core\Websiter.Core.csproj" />
+    <ProjectReference Include="..\Websiter.Routing\Websiter.Routing.csproj" />
+    <ProjectReference Include="..\Websiter.IPC\Websiter.IPC.csproj" />
+    <ProjectReference Include="..\Websiter.Workers\Websiter.Workers.csproj" />
+    <ProjectReference Include="..\Websiter.Server\Websiter.Server.csproj" />
+    <ProjectReference Include="..\Websiter.Components\Websiter.Components.csproj" />
+    <ProjectReference Include="..\Websiter.Frontend\Websiter.Frontend.csproj" />
+    <ProjectReference Include="..\Websiter.Native\Websiter.Native.csproj" />
+    <ProjectReference Include="..\Websiter.Security\Websiter.Security.csproj" />
+    <ProjectReference Include="..\Websiter.Diagnostics\Websiter.Diagnostics.csproj" />
+    <ProjectReference Include="..\Websiter.Deployment\Websiter.Deployment.csproj" />
+    <ProjectReference Include="..\Websiter.Runtime\Websiter.Runtime.csproj" />
+  </ItemGroup>
+
+</Project>

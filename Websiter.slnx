@@ -1,5 +1,6 @@
 <Solution>
   <Folder Name="/src/">
+    <Project Path="src/Websiter/Websiter.csproj" />
     <Project Path="src/Websiter.CLI/Websiter.CLI.csproj" />
     <Project Path="src/Websiter.Components/Websiter.Components.csproj" />
     <Project Path="src/Websiter.Core/Websiter.Core.csproj" />

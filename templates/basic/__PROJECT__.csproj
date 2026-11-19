@@ -17,6 +17,6 @@
     <ProjectReference Include="$(WebsiterSrc)/Websiter.Runtime/Websiter.Runtime.csproj" />
   </ItemGroup>
   <ItemGroup Condition="'$(WebsiterSrc)' == ''">
-    <PackageReference Include="Websiter.Runtime" Version="__WEBSITER_VERSION__" />
+    <PackageReference Include="Websiter" Version="__WEBSITER_VERSION__" />
   </ItemGroup>
 </Project>
